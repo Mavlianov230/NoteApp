@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#252525"
+    tools:context=".ui.Activity.Onboard.Fragment.OnBoardPagerFragment">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="76dp"
+            android:text="Notes"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_view"
+            android:layout_width="288dp"
+            android:layout_height="264dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/bg_image"
+
+            />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="62dp"
+            android:text="Удобство"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/txt_body"
+            android:layout_width="280dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:text="Создавайте заметки в два клика! Записывайте мысли, идеи и важные задачи мгновенно."
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            android:layout_width="230dp"
+            android:layout_height="68dp"
+            android:text="Начать"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="128dp"
+            android:backgroundTint="#D88D02"
+            app:cornerRadius="12dp" />
+
+
+
+
+</LinearLayout>

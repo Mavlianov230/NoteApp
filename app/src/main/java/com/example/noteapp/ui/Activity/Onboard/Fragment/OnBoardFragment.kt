@@ -8,12 +8,15 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.example.noteapp.R
-import com.example.noteapp.ui.Activity.Onboard.Adapter.OnBoardAdapter
 import com.example.noteapp.databinding.FragmentOnBoardBinding
+import com.example.noteapp.ui.Activity.App
+import com.example.noteapp.ui.Activity.Onboard.Adapter.OnBoardAdapter
 
 class OnBoardFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardBinding
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,7 +54,6 @@ class OnBoardFragment : Fragment() {
         }
     }
 
-
     private fun setupListener() = with(binding.viewpager2) {
         registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
@@ -59,6 +61,7 @@ class OnBoardFragment : Fragment() {
                 updateDotsIndicator(position)
                 if (position == 2) {
                     binding.txtSkip.visibility = View.INVISIBLE
+                    App.preferences.isOnBoardShown = true
                 } else {
                     binding.txtSkip.visibility = View.VISIBLE
                     binding.txtSkip.setOnClickListener {

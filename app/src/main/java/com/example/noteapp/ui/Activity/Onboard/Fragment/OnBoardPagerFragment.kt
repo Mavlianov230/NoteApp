@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieDrawable
+import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentOnBoardPagerBinding
 
 class OnBoardPagerFragment : Fragment() {
@@ -16,7 +18,6 @@ class OnBoardPagerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = FragmentOnBoardPagerBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -46,7 +47,7 @@ class OnBoardPagerFragment : Fragment() {
                 txtBody.text = "Синхронизация на всех устройствах. Доступ к записям в любое время и в любом месте."
                 lottieView.setAnimation("Animation3.json")
                 btnNext.setOnClickListener {
-
+                    findNavController().navigate(R.id.action_onBoardPagerFragment_to_noteFragment)
                 }
                 btnNext.visibility = View.VISIBLE
             }
@@ -54,8 +55,6 @@ class OnBoardPagerFragment : Fragment() {
         lottieView.repeatCount = LottieDrawable.INFINITE
         lottieView.playAnimation()
     }
-
-
 
     companion object {
         const val ARG_ONBOARD_POSITION = "onBoard"

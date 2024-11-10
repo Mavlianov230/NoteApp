@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentOnBoardBinding
@@ -15,8 +16,6 @@ import com.example.noteapp.ui.Activity.Onboard.Adapter.OnBoardAdapter
 class OnBoardFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardBinding
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +27,12 @@ class OnBoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (App.preferences.isOnBoardShown) {
+            navigateToMainScreen()
+            return
+        }
+
         initialize()
         setupListener()
     }
@@ -59,6 +64,7 @@ class OnBoardFragment : Fragment() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 updateDotsIndicator(position)
+
                 if (position == 2) {
                     binding.txtSkip.visibility = View.INVISIBLE
                     App.preferences.isOnBoardShown = true
@@ -82,5 +88,10 @@ class OnBoardFragment : Fragment() {
                 dot.setBackgroundResource(R.drawable.dot_inactive)
             }
         }
+    }
+
+    private fun navigateToMainScreen() {
+
+        findNavController().navigate(R.id.action_noteFragment_to_noteDetailFragment)
     }
 }

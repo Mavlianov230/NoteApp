@@ -3,18 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/onBoardFragment">
 
 
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.example.noteapp.ui.Activity.SplashFragment"
-        android:label="Splash Screen"
-        tools:layout="@layout/fragment_splash">
-        <action
-            android:id="@+id/action_splashFragment_to_onBoardFragment"
-            app:destination="@id/onBoardFragment" />
-    </fragment>
 
 
     <fragment

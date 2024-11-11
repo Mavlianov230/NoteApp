@@ -1,36 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:background="#252525"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Activity.Onboard.Note.NoteFragment">
 
-<TextView
-    android:id="@+id/txt_main"
-    android:textSize="30sp"
-    android:textStyle="bold"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/btn_menu"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="42dp"
+        android:contentDescription="Menu"
+        android:src="@drawable/img_2" />
+
+    <ImageView
+        android:id="@+id/btn_changer"
+        android:layout_width="20dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:text="Все заметки"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="37dp"/>
+
 
     <EditText
-        android:id="@+id/et_text"
-        android:layout_marginTop="15dp"
+        android:id="@+id/et_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/bg_et_search"
+        android:drawableStart="@drawable/search"
+        android:hint="   Поиск заметок"
+        android:padding="12dp"
+        android:textColorHint="#E2D5D5"/>
 
-    <Button
-        android:id="@+id/btn_save"
-        android:text="Сохранить"
-        android:layout_marginTop="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btn_action"
-        android:text="->"
-        android:layout_marginTop="15dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_note"
+        android:layout_marginTop="156dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="36dp"
+        app:srcCompat = "@android:drawable/ic_input_add"
+        android:backgroundTint="#D88B02"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-</LinearLayout>
+</FrameLayout>

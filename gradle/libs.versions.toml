@@ -12,8 +12,9 @@ material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
 materialVersion = "1.7.5"
-navigationUiKtx = "2.8.3"
+navigationUiKtx = "2.8.4"
 lottieVersion = "6.5.2"
+roomKtx = "2.6.1"
 ui = "1.7.5"
 uiToolingPreview = "1.7.5"
 viewpager2 = "1.1.0"
@@ -25,6 +26,8 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-material = { module = "androidx.compose.material:material", version.ref = "materialVersion" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationUiKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
 androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }

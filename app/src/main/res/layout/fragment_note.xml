@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#252525"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.Activity.Onboard.Note.NoteFragment">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+    <ImageView
+        android:id="@+id/btn_menu"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="start|top"
+        android:layout_marginLeft="24dp"
+        android:contentDescription="Menu"
+        android:src="@drawable/baseline_view_headline_24" />
+
+        <ImageView
+            android:id="@+id/btn_changer"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="398dp"
+            android:src="@drawable/baseline_view_quilt_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:text="Все заметки"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="top|center_horizontal" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/colorsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="10dp">
+
+
+        <ImageView
+            android:id="@+id/color_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#FF0000"
+            android:layout_margin="8dp" />
+
+
+        <ImageView
+            android:id="@+id/color_2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00FF00"
+            android:layout_margin="8dp" />
+
+
+        <ImageView
+            android:id="@+id/color_3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#0000FF"
+            android:layout_margin="8dp" />
+
+
+        <ImageView
+            android:id="@+id/color_4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#FFFF00"
+            android:layout_margin="8dp" />
+
+
+        <ImageView
+            android:id="@+id/color_5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#FF00FF"
+            android:layout_margin="8dp" />
+
+
+        <ImageView
+            android:id="@+id/color_6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00FFFF"
+            android:layout_margin="8dp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/bg_et_search"
+        android:drawableStart="@drawable/search"
+        android:hint="   Поиск заметок"
+        android:padding="12dp"
+        android:textColorHint="#E2D5D5"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_note"
+        android:layout_marginTop="156dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="36dp"
+        app:srcCompat = "@android:drawable/ic_input_add"
+        android:backgroundTint="#D88B02"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</FrameLayout>

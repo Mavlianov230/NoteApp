@@ -1,0 +1,135 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#252525"
+    tools:context=".ui.Activity.Onboard.Note.NoteDetailFragment">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/return_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:contentDescription="Back Button" />
+
+        <ImageView
+            android:id="@+id/menu_btn"
+            android:layout_width="24dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="398dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/menu" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            tools:text="Time" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="54dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:text="Date" />
+
+        <TextView
+            android:id="@+id/btn_add_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#D88B02"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="300dp"
+            android:text="Готова"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/colorsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="@drawable/ic_style"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/color_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="#FF5733" />
+
+        <ImageView
+            android:id="@+id/color_2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="#33FF57" />
+
+        <ImageView
+            android:id="@+id/color_3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="#3357FF" />
+
+        <ImageView
+            android:id="@+id/color_4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="#FFFF33" />
+
+        <ImageView
+            android:id="@+id/color_5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="#FF33FF" />
+
+        <ImageView
+            android:id="@+id/color_6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="#33FFFF" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:hint="Title"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="match_parent"
+        android:layout_marginTop="140dp"
+        android:hint="Text"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_height="wrap_content"/>
+</FrameLayout>

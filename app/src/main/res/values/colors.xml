@@ -8,5 +8,6 @@
         <color name="color_4">#FFFF33</color>
         <color name="color_5">#FF33FF</color>
         <color name="color_6">#33FFFF</color>
+    <color name="gray">#5B5B5B</color>
 
 </resources>

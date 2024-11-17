@@ -2,6 +2,7 @@ package com.example.noteapp.ui.Activity.Onboard.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +22,9 @@ class NoteAdapter (
             binding.itemDescription.text = item?.description
             binding.itemDate.text = item?.date
             binding.itemTime.text = item?.time
+            item?.selectedColor?.let { color ->
+                binding.root.setBackgroundColor(ContextCompat.getColor(itemView.context, color))
+            }
         }
     }
 

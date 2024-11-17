@@ -24,7 +24,7 @@
         <ImageView
             android:id="@+id/menu_btn"
             android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_height="28dp"
             android:layout_marginLeft="398dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/menu" />
@@ -67,8 +67,8 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:visibility="gone"
+        android:background="@drawable/ic_style"
         android:layout_marginTop="10dp">
-
 
         <ImageView
             android:id="@+id/color_1"

@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
+import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentNoteDetailBinding
 import com.example.noteapp.ui.Activity.App
 import com.example.noteapp.ui.Activity.Data.Daos.Models.NoteModels
@@ -19,6 +21,7 @@ class NoteDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteDetailBinding
     private var noteId: Int = -1
+    private var selectedColor: Int = -1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,12 +50,17 @@ class NoteDetailFragment : Fragment() {
                 binding.etDescription.setText(model.description)
                 binding.date.text = model.date
                 binding.time.text = model.time
+                selectedColor = model.selectedColor
+                updateNoteColor(selectedColor)
 
             }
         }
     }
 
+
+
     private fun setupListeners() = with(binding) {
+
 
         etTitle.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -66,6 +74,16 @@ class NoteDetailFragment : Fragment() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+
+        menuBtn.setOnClickListener {
+            toggleColorsVisibility(true)
+        }
+        color1.setOnClickListener { selectColor(R.color.color_1) }
+        color2.setOnClickListener { selectColor(R.color.color_2) }
+        color3.setOnClickListener { selectColor(R.color.color_3) }
+        color4.setOnClickListener { selectColor(R.color.color_4) }
+        color5.setOnClickListener { selectColor(R.color.color_5) }
+        color6.setOnClickListener { selectColor(R.color.color_6) }
 
 
         etDescription.addTextChangedListener(object : TextWatcher {
@@ -95,13 +113,14 @@ class NoteDetailFragment : Fragment() {
                 val updatedNote = NoteModels(
                     etTitle, etDescription,
                     date = currentDate,
-                    time = currentTime
+                    time = currentTime,
+                    selectedColor = selectedColor
                 )
                 updatedNote.id = noteId
                 App.appDatabase?.noteDao()?.updateNote(updatedNote)
             } else {
                 App.appDatabase?.noteDao()?.insertNote(
-                    NoteModels(etTitle, etDescription, currentDate, currentTime)
+                    NoteModels(etTitle, etDescription, currentDate, currentTime,selectedColor)
                 )
             }
 
@@ -109,8 +128,30 @@ class NoteDetailFragment : Fragment() {
             binding.time.text = currentTime
             binding.date.text = currentDate
             findNavController().navigateUp()
+
         }
     }
+
+    private fun toggleColorsVisibility(visible: Boolean) {
+        if (visible) {
+            binding.colorsContainer.visibility = View.VISIBLE
+        } else {
+            binding.colorsContainer.visibility = View.GONE
+        }
+    }
+
+    private fun selectColor(colorResId: Int) {
+        selectedColor = colorResId
+
+        toggleColorsVisibility(false)
+        updateNoteColor(colorResId)
+    }
+
+    private fun updateNoteColor(colorResId: Int) {
+
+        binding.root.setBackgroundColor(ContextCompat.getColor(requireContext(), colorResId))
+    }
+
 
     private fun showBtnAddText() {
         binding.btnAddText.visibility = View.VISIBLE

@@ -47,7 +47,7 @@ class OnBoardPagerFragment : Fragment() {
                 txtBody.text = "Синхронизация на всех устройствах. Доступ к записям в любое время и в любом месте."
                 lottieView.setAnimation("Animation3.json")
                 btnNext.setOnClickListener {
-                    findNavController().navigate(R.id.noteFragment)
+                    findNavController().navigate(R.id.signInFragment)
                 }
                 btnNext.visibility = View.VISIBLE
             }

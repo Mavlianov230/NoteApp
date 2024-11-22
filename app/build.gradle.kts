@@ -60,6 +60,10 @@ dependencies {
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
-    implementation("com.google.android.gms:play-services-auth:21.0.0")
+    implementation(libs.play.services.auth)
+    implementation(libs.firebase.bom)
+    implementation(libs.firebase.messaging)
+    implementation(libs.google.firebase.analytics)
+
 
 }

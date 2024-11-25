@@ -64,6 +64,8 @@ dependencies {
     implementation(libs.firebase.bom)
     implementation(libs.firebase.messaging)
     implementation(libs.google.firebase.analytics)
+    implementation ("androidx.drawerlayout:drawerlayout:1.2.0")
+    implementation ("androidx.appcompat:appcompat:1.7.0")
 
 
 }
